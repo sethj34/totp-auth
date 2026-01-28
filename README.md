@@ -1,73 +1,43 @@
-# Welcome to your Lovable project
+# TOTP Authenticator
 
-## Project info
+Client-side TOTP (Time-Based One-Time Password) authenticator that allows users to securely generate and manage multi-factor authentication codes directly in the browser. Built with a React + TypeScript architecture and designed using backend-style service abstractions, it mirrors the core functionality of popular authenticator apps while remaining lightweight and privacy-focused.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## Overview
 
-There are several ways of editing your application.
+* Standards-Compliant MFA: Implements RFC 6238–compliant TOTP generation, producing time-based one-time passwords compatible with common MFA workflows.
+* Secure Credential Handling: Enforces strict Base32 secret validation, normalization, and lifecycle management to ensure correctness and prevent invalid authentication states.
+* Real-Time Token Synchronization: Maintains synchronized 30-second token rotation with visual countdown feedback to clearly communicate token validity windows.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Technologies
 
-Changes made via Lovable will be committed automatically to this repo.
+### Frontend
 
-**Use your preferred IDE**
+* React (Vite): Responsive, component-based UI for managing authentication credentials and displaying rotating TOTP codes.
+* State Management: Uses React hooks (`useState`, `useEffect`, `useRef`) to coordinate real-time token updates and UI state.
+* Styling & UI: Built with Tailwind CSS and shadcn/ui to deliver a clean, accessible, and modern interface.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Backend
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* TOTP Engine: Uses the `otpauth` library to implement RFC 6238–compliant time-based OTP generation.
+* Validation Layer: Handles Base32 decoding, secret normalization, UUID assignment, and error handling.
+* Stores credential metadata in browser `localStorage` to maintain continuity across sessions without external dependencies.
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Setup & Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. Clone the Repository:
+```
+git clone https://github.com/sethj34/auth-connect-hub.git
+cd auth-connect-hub
 ```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+2. Install Dependencies & Run:
+```
+npm install
+npm run dev
+```
