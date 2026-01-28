@@ -32,7 +32,7 @@ Client-side TOTP (Time-Based One-Time Password) authenticator that allows users 
 
 1. Clone the Repository:
 ```
-git clone https://github.com/sethj34/auth-connect-hub.git
+git clone https://github.com/sethj34/totp-auth.git
 cd totp-auth
 ```
 
