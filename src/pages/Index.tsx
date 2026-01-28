@@ -49,7 +49,7 @@ const Index = () => {
             </div>
             <h2 className="text-xl font-semibold text-foreground mb-2">No accounts yet</h2>
             <p className="text-muted-foreground max-w-sm mb-6">
-              Add your first authentication account to start generating secure one-time codes.
+              Add your first authentication account to start generating secure one-time codes. Codes are saved locally and never leave your device.
             </p>
             <AddEntryDialog onAdd={handleAddEntry} />
           </div>
@@ -65,13 +65,6 @@ const Index = () => {
           </div>
         )}
       </main>
-      
-      {/* Footer */}
-      <footer className="fixed bottom-0 left-0 right-0 py-3 text-center border-t border-border bg-background/80 backdrop-blur-sm">
-        <p className="text-xs text-muted-foreground">
-          Your codes are stored locally and never leave your device
-        </p>
-      </footer>
     </div>
   );
 };
