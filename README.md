@@ -33,7 +33,7 @@ Client-side TOTP (Time-Based One-Time Password) authenticator that allows users 
 1. Clone the Repository:
 ```
 git clone https://github.com/sethj34/auth-connect-hub.git
-cd auth-connect-hub
+cd totp-auth
 ```
 
 2. Install Dependencies & Run:
